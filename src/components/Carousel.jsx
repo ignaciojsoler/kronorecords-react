@@ -43,11 +43,11 @@ const Carousel = () => {
           {
             videos.map((video, idx) => {
               return <div className={`carousel-item ${video.id === 1 ? 'active' : ' '}`} key={idx}>
-              <a className="position-relative" target="_blank" href={video.url}>
-                <h6 className="position-absolute text-white m-3">{video.title}</h6>
-                <img src={video.image} alt="reel-image" className="w-100"/>
-              </a>
-            </div>
+                <a className="position-relative" target="_blank" href={video.url}>
+                  <h6 className="position-absolute text-white m-3">{video.title}</h6>
+                  <img src={video.image} alt="reel-image" className="w-100" />
+                </a>
+              </div>
             })
           }
 
@@ -77,52 +77,19 @@ const Carousel = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      {/*Desktop carousel */}
-      <div className="container-fluid d-none d-md-block bg-black py-md-5 my-5 my-lg-0">
-        <div className="d-flex flex-column mx-5">
-          <div className="top-videos d-flex justify-content-center">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/Nn7XfT8dl7E?controls=0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="p-1"
-            ></iframe>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/_Nw56_h2ot4?controls=0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="p-1"
-            ></iframe>
-          </div>
-          <div className="bottom-videos d-flex justify-content-center">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/ZvAtXmmtG00?controls=0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="p-1"
-            ></iframe>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/MU-EBwMbBho?controls=0"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="p-1"
-            ></iframe>
+      {/*Desktop carousel TODO - Fix this */}      <div className="container-fluid d-none d-md-block bg-black py-md-5 my-5 my-lg-0">
+        <div className="container">
+          <div className="row g-3">
+            {
+              videos.map((video, idx) => {
+                return <div key={idx} className="col-md-6">    
+                  <a className="position-relative" target="_blank" href={video.url}>
+                    <h6 className="position-absolute text-white m-3">{video.title}</h6>
+                    <img src={video.image} alt="reel-image" className="w-100" />
+                  </a>
+                </div>
+              })
+            }
           </div>
         </div>
       </div>
