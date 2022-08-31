@@ -85,7 +85,7 @@ const Carousel = () => {
                 return <div key={idx} className="col-md-6">    
                   <a className="position-relative" target="_blank" href={video.url}>
                     <h6 className="position-absolute text-white m-3">{video.title}</h6>
-                    <img src={video.image} alt="reel-image" className="w-100" />
+                    <img src={video.image} alt="reel-image" className="w-100 border border-secondary" />
                   </a>
                 </div>
               })

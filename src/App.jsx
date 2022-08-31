@@ -11,10 +11,8 @@ import Footer from "./components/Footer";
 import Portfolio from "./pages/Portfolio";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
-import Loading from "./components/Loading";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div className="App mx-0">
@@ -22,7 +20,7 @@ function App() {
         <Header />
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about-us" element={<AboutUs />} />
