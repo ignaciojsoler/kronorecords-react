@@ -1,5 +1,5 @@
 import React from "react";
-import coverImg from '../assets/cover-background.jpg'
+import coverImg from '../assets/cover-background.webp'
 import Fade from 'react-reveal/Fade';
 
 const Cover = () => {

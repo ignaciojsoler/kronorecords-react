@@ -1,12 +1,13 @@
 import React from "react";
-
+import data from '../portfolio-data.json'
 
 const Carousel = () => {
+  const videos = data
   return (
     <>
       <div
         id="carouselIndicators"
-        className="carousel slide bg-black py-3 d-lg-none"
+        className="carousel slide bg-black py-3 d-md-none"
         data-bs-ride="carousel"
       >
         <div className="carousel-indicators">
@@ -36,31 +37,20 @@ const Carousel = () => {
             data-bs-slide-to="3"
             aria-label="Slide 4"
           ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselIndicators"
-            data-bs-slide-to="4"
-            aria-label="Slide 5"
-          ></button>
         </div>
         {/*Mobile carousel */}
         <div className="carousel-inner">
-          <div className="carousel-item active">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Nn7XfT8dl7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          
-          <div className="carousel-item">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/_Nw56_h2ot4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div className="carousel-item">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/SThFEF2bEQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div className="carousel-item">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/MU-EBwMbBho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div className="carousel-item">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/ZvAtXmmtG00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+          {
+            videos.map((video, idx) => {
+              return <div className={`carousel-item ${video.id === 1 ? 'active' : ' '}`} key={idx}>
+              <a className="position-relative" target="_blank" href={video.url}>
+                <h6 className="position-absolute text-white m-3">{video.title}</h6>
+                <img src={video.image} alt="reel-image" className="w-100"/>
+              </a>
+            </div>
+            })
+          }
+
         </div>
         <button
           className="carousel-control-prev"
@@ -88,7 +78,7 @@ const Carousel = () => {
         </button>
       </div>
       {/*Desktop carousel */}
-      <div className="container-fluid d-none d-lg-block bg-black py-md-5 my-5 my-lg-0">
+      <div className="container-fluid d-none d-md-block bg-black py-md-5 my-5 my-lg-0">
         <div className="d-flex flex-column mx-5">
           <div className="top-videos d-flex justify-content-center">
             <iframe
