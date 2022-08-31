@@ -2,6 +2,8 @@
 
 ¡Hola! Esta es la Landing page desarrollada para Krono Records, un proyecto que ofrece servicios de composición musical original para cine y videojuegos.
 
+**Podes visitar el sitio web haciendo click aquí: https://ignaciojsoler.github.io/kronorecords-react/ **
+
 ### Características funcionales:
 - Diseño responsivo
 - Todas las secciones tienen animaciones utilizando la librería React reveal
