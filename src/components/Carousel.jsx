@@ -1,5 +1,6 @@
 import React from "react";
 import data from '../portfolio-data.json'
+import Fade from 'react-reveal/Fade';
 
 const Carousel = () => {
   const videos = data
@@ -39,6 +40,7 @@ const Carousel = () => {
           ></button>
         </div>
         {/*Mobile carousel */}
+        <Fade>
         <div className="carousel-inner">
           {
             videos.map((video, idx) => {
@@ -76,8 +78,11 @@ const Carousel = () => {
           ></span>
           <span className="visually-hidden">Next</span>
         </button>
+        </Fade>
       </div>
+      
       {/*Desktop carousel TODO - Fix this */}      <div className="container-fluid d-none d-md-block bg-black py-md-5 my-5 my-lg-0">
+        <Fade up>
         <div className="container">
           <div className="row g-3">
             {
@@ -92,6 +97,7 @@ const Carousel = () => {
             }
           </div>
         </div>
+        </Fade>
       </div>
     </>
   );
